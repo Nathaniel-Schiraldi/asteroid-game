@@ -1,0 +1,124 @@
+/*Author: Nathaniel Schiraldi
+Student Number: 000855552
+File Created: March 28, 2022
+Description: Styles used to provide appropriate characteristics and design to the asteroid space game on the index.html webpage.*/
+
+body {
+    background-color: #C5C6C7;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header, footer {
+    background-color: #1F2833;
+    border-bottom: solid 3px white;
+}
+
+#svgSpaceShipJet1Logo, #svgSpaceShipJet2Logo {
+    fill: red;
+}
+
+.fireAppearance {
+    animation: animatedJet 0.75s infinite;
+}
+
+@keyframes animatedJet {
+    0% {}
+        
+    20% {
+        fill: #F6412D;
+    }
+
+    40% {
+        fill: #FF5607;
+    }
+
+    60% {
+        fill: #FF9800;
+    }
+
+    80% {
+        fill: #FFC100;
+    }
+
+    100% {
+        fill: #FFEC19;
+    }
+}
+
+#svgBackgroundLogo {
+    fill: #ADD8E6;
+}
+
+#svgSpaceShipBodyLogo {
+    fill: #C0C0C0;
+}
+
+#svgSpaceShipSide1Logo, #svgSpaceShipSide2Logo, #svgSpaceShipSide3Logo {
+    fill: #4B0082;
+}
+
+#svgSpaceShipWindow1Logo, #svgSpaceShipWindow2Logo {
+    stroke: black;
+    stroke-width: 2;
+    fill: #75E6DA;
+}
+
+#svgLogoSloganPath {
+    stroke: none;
+    fill: none;
+}
+
+#svgLogoCurve {
+    stroke: #191970;
+    stroke-width: 4;
+    fill: none;
+}
+
+#sloganText {
+    fill: #4B0082;
+}
+
+#asteroidButtonsAndAsteroidInput input {
+    width: 180px;
+    height: 40px;
+}
+
+#gameContainer {
+    width: 100%;
+}
+
+.space {
+    fill: black; 
+}
+
+.star {
+    fill: white;
+}
+
+.asteroid, .splitAsteroid {
+    fill: #776254; 
+    stroke: #5f4e43; 
+    stroke-width: 3;
+}
+
+#asteroidError {
+    color: red;
+    display: none;
+}
+
+#asteroidError p {
+    font-size: 14pt;
+}
+
+#resetGameButton {
+    display: none;
+}
+
+#gameInstructions p, #asteroidBreakCounter p  {
+    font-size: 14pt;
+    margin: 0;
+}
+
+footer {
+    border-top: solid 3px white;
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--Author: Nathaniel Schiraldi
+        Student Number: 000855552
+        File Created: March 28, 2022
+        Description: Fifth Assignment creating a asteroid space game. User will be able to create and split asteroids.-->
+
+    <title>Assignment #5 Nathaniel Schiraldi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="asteroidspacegame.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center text-white pt-3">COMP 10259 Assignment 5 - Asteroid Space Game</h1>
+        <h2 class="text-center mb-0 pb-4 text-white">Created by: Nathaniel Schiraldi, 000855552</h2>
+    </header>
+
+    <main class="text-center">
+        
+        <!--Static SVG used to create a spaceship logo.-->
+        <div class="pt-3" id="logoContainer">
+            <svg id="logoSection" width="400" height="200">
+                <rect id="svgBackgroundLogo" x="0" y="0" width="400" height="200"></rect>
+                <rect id="svgSpaceShipBodyLogo" x="185" y="85" width="30" height="60"></rect>
+                <polygon id="svgSpaceShipSide1Logo" points="185,85 200,65 215,85"></polygon>
+                <polygon id="svgSpaceShipSide2Logo" points="215,120 215,140 235,140"></polygon>
+                <polygon id="svgSpaceShipSide3Logo" points="185,120 185,140 165,140"></polygon>
+                <circle id="svgSpaceShipWindow1Logo" cx="200" cy="100" r="5"></circle>
+                <circle id="svgSpaceShipWindow2Logo" cx="200" cy="120" r="5"></circle>
+                <polygon id="svgSpaceShipJet1Logo" class="fireAppearance" points="190,145 185,160 195,160"></polygon>
+                <polygon id="svgSpaceShipJet2Logo" class="fireAppearance" points="210,145 205,160 215,160"></polygon>
+                
+                <path id="svgLogoSloganPath" d="M 120 100 Q 200 -20 285 100"></path>
+                <path id="svgLogoCurve" d="M 120 120 Q 202.5 250 285 120"></path>
+                
+                <text id="sloganText">
+                    <textPath href="#svgLogoSloganPath">
+                        Spaceships were meant to fly!!
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+        
+        <div id="asteroidError" class="pt-3 pb-0">
+            <p class="m-0">Invalid Asteroid Amount</p>
+        </div>
+
+        <!--Input elements (button and input) with a form.-->
+        <form id="asteroidForm">
+            <div id="asteroidButtonsAndAsteroidInput" class="pt-1">
+                <input type="number" id="numberOfAsteroids" class="mt-3" min="1" max="3" placeholder="Asteroid Amount (1-3)">
+                <button id="generateAsteroidsButton" class="btn btn-info btn-outline-primary rounded-pill text-dark border-2" onclick="gameSetup();" type="button">Generate Asteroid(s)</button>
+            </div>
+        </form>
+        
+        <!--Input element (button) without a form.-->
+        <div id="resetButton" class="pt-3">
+            <button id="resetGameButton" class="btn btn-info btn-outline-primary rounded-pill text-dark border-2" onclick="resetGameState();" type="button">Reset Game</button>
+        </div>
+
+        <div id="asteroidBreakCounter" class="pt-3"></div>
+
+        <div class="pt-3" id="gameContainer">
+            <svg id="gameSection" width="1280" height="720">
+            </svg>
+        </div>
+
+        <div class="pt-3 pb-5" id="gameInstructions">
+            <h2>Game Instructions!</h2>
+            <p class="m-0">
+            Enter a valid asteroid amount and click the button 'Generate Asteroid(s)' to start the game.<br>
+            When you hover over an asteroid with your mouse cursor and move your cusor away from the chosen asteroid it will break apart.<br>
+            The total number of asteroids broken will be counted and displayed.<br>
+            Click the button 'Reset Game' to play at a fresh start.</p>
+        </div>
+    </main>
+
+    <footer> 
+        <p class="text-center text-white pt-4 pb-3">&copy; 2022, Nathaniel Schiraldi, Mohawk College</p>
+    </footer>
+</body>
+
+</html>
